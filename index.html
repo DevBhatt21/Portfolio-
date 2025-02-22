@@ -376,4 +376,101 @@ environment and to contribute to impactful projects within a tech-driven organiz
     </footer>
     <script src="script.js"></script>
   </body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .chat-container {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .input-box {
+            display: flex;
+        }
+        .input-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-box button {
+            padding: 10px;
+            margin-left: 5px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Chat with Me!</h2>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Ask me anything...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    
+    <script>
+        function sendMessage() {
+            let userInput = document.getElementById("user-input").value;
+            let chatBox = document.getElementById("chat-box");
+            
+            if (userInput.trim() === "") return;
+            
+            let userMessage = `<p><strong>You:</strong> ${userInput}</p>`;
+            chatBox.innerHTML += userMessage;
+            
+            let botResponse = getBotResponse(userInput.toLowerCase());
+            
+            setTimeout(() => {
+                let botMessage = `<p><strong>Bot:</strong> ${botResponse}</p>`;
+                chatBox.innerHTML += botMessage;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 500);
+            
+            document.getElementById("user-input").value = "";
+        }
+
+        function getBotResponse(input) {
+            if (input.includes("hello") || input.includes("hi")) {
+                return "Hello! How can I help you?";
+            } else if (input.includes("skills")) {
+                return "I have experience in HTML, CSS, JavaScript, Node.js, and SQL!";
+            } else if (input.includes("projects")) {
+                return "Check out my projects on GitHub: <a href='https://github.com/' target='_blank'>GitHub</a>";
+            } else if (input.includes("contact")) {
+                return "You can contact me at devbhatt2111@gmail.com!";
+            } else {
+                return "I'm not sure how to answer that. Try asking about my skills, projects, or contact info!";
+            }
+        }
+    </script>
+</body>
+</html>
+
 </html>
