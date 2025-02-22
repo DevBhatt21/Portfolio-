@@ -5,10 +5,14 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Added to ensure padding/margins don't cause overflow */
 }
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden; /* Ensures no horizontal scroll */
+  display: flex;
+  flex-direction: column; /* Makes the page content stack vertically */
 }
 
 html {
@@ -31,18 +35,20 @@ a,
 nav,
 .nav-links {
   display: flex;
+  flex-direction: column; /* Stack navigation items vertically */
 }
 
 nav {
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 17vh;
+  height: 10vh; /* Adjusted for vertical layout */
 }
 
 .nav-links {
-  gap: 2rem;
+  gap: 1rem; /* Reduced gap for a vertical layout */
   list-style: none;
   font-size: 1.5rem;
+  text-align: center;
 }
 
 a {
@@ -137,15 +143,18 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
-  margin: 0 10rem;
+  height: auto; /* Removed fixed height */
+  margin: 2rem 0; /* Adjusted for vertical layout */
   box-sizing: border-box;
   min-height: fit-content;
+  display: flex;
+  flex-direction: column; /* Ensures content stacks vertically */
 }
 
 .section-container {
   display: flex;
-  gap: 4rem; /* Added gap for proper spacing */
+  flex-direction: column; /* Ensure the sections stack vertically */
+  gap: 2rem;
 }
 
 /* PROFILE SECTION */
@@ -153,14 +162,15 @@ section {
 #profile {
   display: flex;
   justify-content: center;
-  gap: 5rem;
+  gap: 2rem; /* Reduced gap for vertical layout */
   height: 80vh;
+  flex-direction: column; /* Stack profile content vertically */
 }
 
 .section__pic-container {
   display: flex;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   margin: auto 0;
 }
 
@@ -207,6 +217,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-direction: column; /* Stack buttons vertically */
 }
 
 .btn {
@@ -215,34 +226,7 @@ section {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
-}
-
-.btn-color-1,
-.btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
-}
-
-.btn-color-1:hover,
-.btn-color-2:hover {
-  cursor: pointer;
-}
-
-.btn-color-1,
-.btn-color-2:hover {
-  background: rgb(53, 53, 53);
-  color: white;
-}
-
-.btn-color-1:hover {
-  background: rgb(0, 0, 0);
-}
-
-.btn-color-2 {
-  background: none;
-}
-
-.btn-color-2:hover {
-  border: rgb(255, 255, 255) 0.1rem solid;
+  text-align: center;
 }
 
 /* ABOUT SECTION */
@@ -265,6 +249,7 @@ section {
 .about-containers,
 .about-details-container {
   display: flex;
+  flex-direction: column; /* Stack content vertically */
 }
 
 .about-pic {
@@ -310,16 +295,9 @@ section {
   display: flex;
   text-align: initial;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column; /* Stack experience content vertically */
   gap: 2.5rem;
-  justify-content: space-around;
-}
-
-article {
-  display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
+  justify-content: center;
 }
 
 /* PROJECTS SECTION */
@@ -355,7 +333,7 @@ article {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  height: auto; /* Adjusted for vertical layout */
 }
 
 .contact-info-upper-container {
@@ -473,6 +451,4 @@ footer p {
 #sendBtn {
   background: #0078ff;
   color: white;
-  border: none;
-  padding: 8px 12px;
-  margin-left: 5px
+  border:
