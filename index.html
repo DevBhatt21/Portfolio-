@@ -424,52 +424,7 @@ environment and to contribute to impactful projects within a tech-driven organiz
             cursor: pointer;
         }
     </style>
-</head>
-<body>
-    <div class="chat-container">
-        <h2>Chat with Me!</h2>
-        <div class="chat-box" id="chat-box"></div>
-        <div class="input-box">
-            <input type="text" id="user-input" placeholder="Ask me anything...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-    
-    <script>
-        function sendMessage() {
-            let userInput = document.getElementById("user-input").value;
-            let chatBox = document.getElementById("chat-box");
-            
-            if (userInput.trim() === "") return;
-            
-            let userMessage = `<p><strong>You:</strong> ${userInput}</p>`;
-            chatBox.innerHTML += userMessage;
-            
-            let botResponse = getBotResponse(userInput.toLowerCase());
-            
-            setTimeout(() => {
-                let botMessage = `<p><strong>Bot:</strong> ${botResponse}</p>`;
-                chatBox.innerHTML += botMessage;
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }, 500);
-            
-            document.getElementById("user-input").value = "";
-        }
 
-        function getBotResponse(input) {
-            if (input.includes("hello") || input.includes("hi")) {
-                return "Hello! How can I help you?";
-            } else if (input.includes("skills")) {
-                return "I have experience in HTML, CSS, JavaScript, Node.js, and SQL!";
-            } else if (input.includes("projects")) {
-                return "Check out my projects on GitHub: <a href='https://github.com/' target='_blank'>GitHub</a>";
-            } else if (input.includes("contact")) {
-                return "You can contact me at devbhatt2111@gmail.com!";
-            } else {
-                return "I'm not sure how to answer that. Try asking about my skills, projects, or contact info!";
-            }
-        }
-    </script>
 </body>
 </html>
 
