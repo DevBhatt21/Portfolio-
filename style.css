@@ -9,7 +9,10 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background: url('YOUR_IMAGE_URL_HERE') no-repeat center center fixed;
+  background-size: cover;
 }
+
 
 html {
   scroll-behavior: smooth;
