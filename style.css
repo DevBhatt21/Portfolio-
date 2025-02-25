@@ -9,7 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: url('file:///C:/Users/devbh/Downloads/Portfolio%20pictures/background%20image.webp') no-repeat center center fixed;
+  background: url('./Portfolio pictures/background image.webp') no-repeat center center fixed;
   background-size: cover;
 }
 
