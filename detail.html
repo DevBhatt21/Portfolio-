@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects & More</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Dev Bhatt</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#soft-skills">Soft Skills</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#chatbot">Chatbot</a></li>
+        </ul>
+    </nav>
+    
+    <section id="projects">
+        <h1>My Projects</h1>
+        <div class="project-details">
+            <h2>Project One</h2>
+            <p>Details about Project One...</p>
+        </div>
+        <div class="project-details">
+            <h2>Project Two</h2>
+            <p>Details about Project Two...</p>
+        </div>
+    </section>
+    
+    <section id="soft-skills">
+        <h1>Soft Skills</h1>
+        <ul>
+            <li>Leadership</li>
+            <li>Communication</li>
+            <li>Problem-Solving</li>
+        </ul>
+    </section>
+    
+    <section id="certificates">
+        <h1>Certificates</h1>
+        <p>Here are some of my certifications.</p>
+        <img src="cert1.jpg" alt="Certificate 1">
+        <img src="cert2.jpg" alt="Certificate 2">
+    </section>
+    
+    <section id="chatbot">
+        <h1>Chat with Me</h1>
+        <div id="chatbox">
+            <p id="chat-output"></p>
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </section>
+    
+    <script>
+        function sendMessage() {
+            let input = document.getElementById("user-input").value;
+            let output = document.getElementById("chat-output");
+            output.innerHTML += "<p>You: " + input + "</p>";
+            output.innerHTML += "<p>Bot: Thanks for your message!</p>";
+            document.getElementById("user-input").value = "";
+        }
+    </script>
+</body>
+</html>
 
