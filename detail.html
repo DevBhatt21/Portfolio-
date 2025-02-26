@@ -85,10 +85,10 @@ I developed an Angry Birds-inspired game in Java featuring physics-based project
   }
 
   function sendMessage() {
-    let userInput = document.getElementById("user-input").value;
-    if (userInput.trim() === "") return;
+    let user-input = document.getElementById("user-input").value;
+    if (user-input.trim() === "") return;
 
-    let chatbox = document.getElementById("chat-output");
+    let chatbox = document.getElementById("chatbox");
     let userMessage = <p class="user-message">You: ${userInput}</p>;
     let botMessage = <p class="bot-message">Bot: ${getBotResponse(userInput)}</p>;
 
