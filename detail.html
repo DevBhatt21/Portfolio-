@@ -81,7 +81,7 @@ I developed an Angry Birds-inspired game in Java featuring physics-based project
     } else if (input.includes("contact")) {
       return "You can contact Dev via email at Devbhatt2111@gmail.com or on LinkedIn: [Your LinkedIn Link]";
     } else {
-      return "I'm not sure about that. Ask me about Dev's skills, experience, or projects!";
+      return "I'm not sure about that. Ask me about Dev's skills, experience,projects or contact!";
     }
   }
 
@@ -91,7 +91,7 @@ function sendMessage() {
 
     let chatbox = document.getElementById("chat-output");
     let userMessage = `<p class="user-message">You: ${userInput}</p>`;
-    let botMessage = `<p class="bot-message">Bot: ${getBotResponse(userInput)}</p>`;
+    let botMessage = `<p class="bot-message">Dev's AI Bot: ${getBotResponse(userInput)}</p>`;
 
     chatbox.innerHTML += userMessage + botMessage;
     document.getElementById("user-input").value = ""; // Clear input
