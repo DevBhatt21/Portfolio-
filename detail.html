@@ -64,16 +64,39 @@ I developed an Angry Birds-inspired game in Java featuring physics-based project
             <button onclick="sendMessage()">Send</button>
         </div>
     </section>
-    
     <script>
-        function sendMessage() {
-            let input = document.getElementById("user-input").value;
-            let output = document.getElementById("chat-output");
-            output.innerHTML += "<p>You: " + input + "</p>";
-            output.innerHTML += "<p>Bot: Thanks for your message!</p>";
-            document.getElementById("user-input").value = "";
-        }
-    </script>
-</body>
+  function getBotResponse(input) {
+    input = input.toLowerCase();
+    
+    // Simple responses
+    if (input.includes("hello") || input.includes("hi")) {
+      return "Hello! How can I help you today?";
+    } else if (input.includes("name")) {
+      return "I'm Dev Bhatt's AI Chatbot!";
+    } else if (input.includes("skills") || input.includes("experience")) {
+      return "Dev is experienced in Frontend Development, including HTML, CSS, JavaScript, SQL, Node.js, and more.";
+    } else if (input.includes("projects")) {
+      return "Check out Dev's projects on GitHub: [Your GitHub Link]";
+    } else if (input.includes("contact")) {
+      return "You can contact Dev via email at Devbhatt2111@gmail.com or on LinkedIn: [Your LinkedIn Link]";
+    } else {
+      return "I'm not sure about that. Ask me about Dev's skills, experience, or projects!";
+    }
+  }
+
+  function sendMessage() {
+    let userInput = document.getElementById("userInput").value;
+    if (userInput.trim() === "") return;
+
+    let chatbox = document.getElementById("chatbox");
+    let userMessage = <p class="user-message">You: ${userInput}</p>;
+    let botMessage = <p class="bot-message">Bot: ${getBotResponse(userInput)}</p>;
+
+    chatbox.innerHTML += userMessage + botMessage;
+    document.getElementById("userInput").value = ""; // Clear input
+    chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll
+  }
+</script>
+
 </html>
 
