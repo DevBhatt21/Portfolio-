@@ -7,10 +7,11 @@
   padding: 0;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: url('./Portfolio pictures/Background image-2.jpeg') no-repeat center center fixed;
-  background-size: cover;
+.lora-<uniquifier> {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 
