@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev's Chat Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="dark-mode-toggle">🌙 Dark Mode</button>
+    <section id="chatbot">
+        <h1>Dev's Chat Bot</h1>
+        <h2>Ask me anything about Dev!</h2>
+        <div id="chatbox">
+            <p id="chat-output"></p>
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+            <button onclick="startVoiceInput()">🎤 Speak</button>
+        </div>
+    </section>
+    
+    <script>
+        function getBotResponse(input) {
+            input = input.toLowerCase();
+
+            const jokes = [
+                "Why don’t skeletons fight each other? Because they don’t have the guts! 😆",
+                "I told my wife she was drawing her eyebrows too high. She looked surprised! 🤨",
+                "Why did the scarecrow win an award? Because he was outstanding in his field! 😂",
+                "Parallel lines have so much in common. It’s a shame they’ll never meet. 📏",
+                "Why do cows have hooves instead of feet? Because they lactose! 🐄🤣"
+            ];
+
+            // Emotion-based responses
+            if (input.includes("sad") || input.includes("depressed")) {
+                return "I'm here for you! 😊 Remember, every day is a fresh start! 💖";
+            } else if (input.includes("happy")) {
+                return "That's awesome! Keep smiling! 😃";
+            }
+
+            // Simple responses
+            if (input.includes("hello") || input.includes("hi") || input.includes("hey")) {
+                return "Hello! I am Dev's Chat Bot! What do you want to know about Dev today? 😊";
+            } else if (input.includes("name")) {
+                return "I'm Dev Bhatt's Chatbot! 🤖";
+            } else if (input.includes("joke")) {
+                return jokes[Math.floor(Math.random() * jokes.length)];
+            } else {
+                return "I'm not sure about that. Ask me about Dev's skills, experience, projects, or contact!";
+            }
+        }
+
+        function sendMessage() {
+            let userInput = document.getElementById("user-input").value;
+            if (userInput.trim() === "") return;
+            
+            let chatbox = document.getElementById("chat-output");
+            let userMessage = `<p class='user-message'>You: ${userInput}</p>`;
+            
+            chatbox.innerHTML += userMessage;
+            document.getElementById("user-input").value = "";
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+            showTypingEffect(() => {
+                let botResponse = getBotResponse(userInput);
+                let botMessage = `<p class='bot-message'>Dev's AI Bot: ${botResponse}</p>`;
+                chatbox.innerHTML += botMessage;
+                speakResponse(botResponse);
+                chatbox.scrollTop = chatbox.scrollHeight;
+            });
+        }
+
+        function showTypingEffect(callback) {
+            let chatbox = document.getElementById("chat-output");
+            let typingIndicator = `<p class='bot-message'>Dev's AI Bot is typing...</p>`;
+            chatbox.innerHTML += typingIndicator;
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+            setTimeout(() => {
+                chatbox.innerHTML = chatbox.innerHTML.replace(typingIndicator, "");
+                callback();
+            }, 1000);
+        }
+
+        function startVoiceInput() {
+            let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = "en-US";
+            recognition.start();
+            
+            recognition.onresult = function(event) {
+                let voiceInput = event.results[0][0].transcript;
+                document.getElementById("user-input").value = voiceInput;
+                sendMessage();
+            };
+        }
+
+        function speakResponse(text) {
+            let speech = new SpeechSynthesisUtterance();
+            speech.text = text;
+            speech.lang = "en-US";
+            speech.volume = 1;
+            speech.rate = 1;
+            speech.pitch = 1;
+            window.speechSynthesis.speak(speech);
+        }
+
+        document.getElementById("dark-mode-toggle").addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        #chatbox {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .user-message {
+            text-align: right;
+            color: blue;
+        }
+        .bot-message {
+            text-align: left;
+            color: green;
+        }
+        #dark-mode-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</body>
+</html>
 
