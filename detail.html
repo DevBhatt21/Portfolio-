@@ -13,6 +13,88 @@
             border-bottom: 1px solid #ccc; /* Optional: Add a subtle line between projects */
         }
     </style>
+            /* Chatbot styles */
+        #chatbot {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        #chatbot h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        #chatbot p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        #chatbot button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #chatbot button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Chatbox styles */
+        #chat-output {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .user-message, .bot-message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .user-message {
+            background-color: #e1f5fe;
+            text-align: right;
+        }
+
+        .bot-message {
+            background-color: #f1f8e9;
+        }
+
+        /* Input styles */
+        #user-input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #send-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        #send-button:hover {
+            background-color: #0056b3;
+        }
 
 </head>
 <body>
