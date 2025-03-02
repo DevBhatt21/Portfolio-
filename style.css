@@ -13,6 +13,13 @@
   font-weight: <weight>;
   font-style: normal;
 }
+body {
+  background-image: url('your-image.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating */
+  background-attachment: fixed; /* Keeps the image fixed during scrolling */
+}
 
 
 html {
