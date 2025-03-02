@@ -12,10 +12,9 @@
             padding: 10px; /* Optional: Space inside the project description */
             border-bottom: 1px solid #ccc; /* Optional: Add a subtle line between projects */
         }
-    </style>
-    </style>
-            /* Chatbot styles */
-        chatbot {
+
+        /* Chatbot styles */
+        #chatbot {
             background-color: #f9f9f9;
             padding: 20px;
             border-radius: 10px;
@@ -23,7 +22,7 @@
             margin-top: 30px;
         }
 
-        chatbot h1 {
+        #chatbot h1 {
             font-size: 24px;
             color: #333;
         }
@@ -96,7 +95,7 @@
         #send-button:hover {
             background-color: #0056b3;
         }
-</style>
+    </style>
 </head>
 <body>
     <nav>
@@ -109,55 +108,32 @@
             <li><a href="#chatbot">Chatbot</a></li>
         </ul>
     </nav>
-    
+
     <section id="projects">
-    <h1>My Projects</h1>
-    <div class="project-details">
-        <h2>Project One - Angry Bird Project Using Java</h2>
-        <p>
-            Summary:  
-            I developed an Angry Birds-inspired game in Java featuring physics-based projectile motion, collision detection, and interactive gameplay. The game includes a slingshot mechanism, destructible structures, a scoring system, and immersive sound effects.  
+        <h1>My Projects</h1>
+        <div class="project-details">
+            <h2>Project One - Angry Bird Project Using Java</h2>
+            <p>
+                Summary:  
+                I developed an Angry Birds-inspired game in Java featuring physics-based projectile motion, collision detection, and interactive gameplay. The game includes a slingshot mechanism, destructible structures, a scoring system, and immersive sound effects.
+            </p>
+        </div>
 
-            Key technologies used include Java Swing/JavaFX, a custom physics engine, event handling, and animation.  
+        <div class="project-details">
+            <h2>Project Two - UK Election Analysis Using Python</h2>
+            <p>
+                I developed a Python-based election analysis tool for the recent UK elections, providing 13 user-selectable options to explore results for candidates, constituencies, and specific queries.
+            </p>
+        </div>
 
-            Challenges such as projectile physics, collision handling, and game loop optimization were addressed efficiently.  
+        <div class="project-details">
+            <h2>Project Three - Webpage for a Client</h2>
+            <p>
+                I designed and developed a custom business webpage for a client using HTML, CSS, and JavaScript, tailored to their specific requirements.
+            </p>
+        </div>
+    </section>
 
-            Future improvements include level progression, enhanced graphics, and additional interactive elements.  
-
-            This project highlights my problem-solving skills, game development expertise, and Java programming proficiency.
-        </p>
-    </div>
-
-    <div class="project-details">
-        <h2>Project Two - UK Election Analysis Using Python</h2>
-        <p>
-            I developed a Python-based election analysis tool for the recent UK elections, providing 13 user-selectable options to explore results for candidates, constituencies, and specific queries.  
-
-            The project integrates data processing, visualization, and interactive user input to present election insights effectively.  
-
-            Key features include filtering by candidate or constituency, statistical summaries, and graphical representations of results.  
-
-            The program demonstrates my skills in data analysis, Python scripting, and user-focused application design.
-        </p>
-    </div>
-
-    <div class="project-details">
-        <h2>Project Three - Webpage for a Client</h2>
-        <p>
-            I designed and developed a custom business webpage for a client using HTML, CSS, and JavaScript, tailored to their specific requirements.  
-
-            The project included a responsive layout, interactive elements, and an optimized user experience.  
-
-            Key features incorporated were a modern design, smooth navigation, and dynamic content updates.  
-
-            The development process involved close collaboration with the client to ensure their vision was met.  
-
-            This project highlights my ability to create professional, user-friendly web solutions while aligning with business needs.
-        </p>
-    </div>
-</section>
-
-    
     <section id="soft-skills">
         <h1>Soft Skills</h1>
         <ul>
@@ -166,78 +142,65 @@
             <li>Problem-Solving-Effective in breaking down complex issues, identifying potential solutions, and implementing them efficiently to overcome obstacles.</li>
         </ul>
     </section>
-    
+
     <section id="certificates">
         <h1>Certificates</h1>
         <p>Here are some of my certifications.</p>
-        <img src="./Portfolio pictures/Certificate-1.png " alt="Certificate - 1" >
+        <img src="./Portfolio pictures/Certificate-1.png" alt="Certificate - 1">
         <img src="./Portfolio pictures/Certificate-2.png" alt="Certificate - 2">
-        <img src="./Portfolio pictures/Certificate-3.png " alt="Certificate - 3" >
+        <img src="./Portfolio pictures/Certificate-3.png" alt="Certificate - 3">
     </section>
-    
-<section id="chatbot">
-    <h1>Dev's Chat Bot</h1>
-    <p>Click below to open the chatbot.</p>
-    <a href="chatbot.html" target="_blank">
-        <button>Open Chatbot</button>
-    </a>
-</section>
-    
-   <script>
-  function getBotResponse(input) {
-    input = input.toLowerCase();
 
-    // Array of jokes
-    const jokes = [
-      "Why don’t skeletons fight each other? Because they don’t have the guts!",
-      "I told my wife she was drawing her eyebrows too high. She looked surprised!",
-      "Why did the scarecrow win an award? Because he was outstanding in his field!",
-      "Parallel lines have so much in common. It’s a shame they’ll never meet.",
-      "Why do cows have hooves instead of feet? Because they lactose!"
-    ];
+    <section id="chatbot">
+        <h1>Dev's Chat Bot</h1>
+        <p>Click below to open the chatbot.</p>
+        <a href="chatbot.html" target="_blank">
+            <button>Open Chatbot</button>
+        </a>
+    </section>
 
-    // Simple responses
-    if (input.includes("hello") || input.includes("hi") || input.includes("hey") || input.includes("sup") || input.includes("dude") || input.includes("man")) {
-      return "Hello! I am Dev's Chat Bot! What do you want to know about Dev today? Skills, projects, experience, contact, or maybe a joke?";
-    } else if (input.includes("name")) {
-      return "I'm Dev Bhatt's Chatbot!";
-    } else if (input.includes("skills")) {
-      return "Dev is experienced in Frontend Development, including HTML, CSS, JavaScript, SQL, Java, C, C++, Python, and more. If you want to know about Dev's soft skills, type 'soft skills'.";
-    } else if (input.includes("experience")) {
-      return "Dev has completed a 2-year course in Java, has 6 months of experience in Python, 1 year in HTML/CSS/JavaScript, 6 months in SQL, and 3 months in C++ and C.";    
-    } else if (input.includes("projects")) {
-      return "Dev has done many projects in multiple languages. Which one do you want to know about?\n1. Angry Birds Project\n2. Webpage for a client\n3. Election Analysis App\n4. Birthday Website\n5. Library Management System\nType the name of the project!";
-    } else if (input.includes("angry")) {
-      return "I developed an Angry Birds-inspired game in Java featuring physics-based projectile motion, collision detection, and interactive gameplay. The game includes a slingshot mechanism, destructible structures, a scoring system, and immersive sound effects. Technologies used: Java Swing/JavaFX, a custom physics engine, event handling, and animation. Future improvements: level progression, enhanced graphics, and more interactive elements. Contact Dev for more details via email at Devbhatt2111@gmail.com or LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
-    } else if (input.includes("webpage for the client-1")) {
-      return "I designed and developed a custom business webpage using HTML, CSS, and JavaScript, tailored to client requirements. Features: responsive layout, smooth navigation, and dynamic content updates.\nLink: https://dev21072107.github.io/wepage/";
-    } else if (input.includes("election")) {
-      return "I developed a Python-based election analysis tool for UK elections, providing 13 user-selectable options for data exploration, visualization, and statistics.\nLink to code: https://github.com/dev21072107/Election-mc";
-    } else if (input.includes("birthday website")) {
-      return "Please contact Dev for details via email at Devbhatt2111@gmail.com or on LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
-    } else if (input.includes("library")) {
-      return "Please contact Dev for details via email at Devbhatt2111@gmail.com or on LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
-    } else if (input.includes("contact")) {
-      return "You can contact Dev via email at Devbhatt2111@gmail.com or on LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
-    } else if (input.includes("joke") || input.includes("funny") || input.includes("make me laugh")) {
-      return jokes[Math.floor(Math.random() * jokes.length)];
-    } else {
-      return "I'm not sure about that. Ask me about Dev's skills, experience, projects, or contact!";
-    }
-  }
+    <script>
+        function getBotResponse(input) {
+            input = input.toLowerCase();
 
-  function sendMessage() {
-    let userInput = document.getElementById("user-input").value;
-    if (userInput.trim() === "") return;
+            // Array of jokes
+            const jokes = [
+                "Why don’t skeletons fight each other? Because they don’t have the guts!",
+                "I told my wife she was drawing her eyebrows too high. She looked surprised!",
+                "Why did the scarecrow win an award? Because he was outstanding in his field!",
+                "Parallel lines have so much in common. It’s a shame they’ll never meet.",
+                "Why do cows have hooves instead of feet? Because they lactose!"
+            ];
 
-    let chatbox = document.getElementById("chat-output");
-    let userMessage = `<p class="user-message">You: ${userInput}</p>`;
-    let botMessage = `<p class="bot-message">Dev's AI Bot: ${getBotResponse(userInput)}</p>`;
-
-    chatbox.innerHTML += userMessage + botMessage;
-    document.getElementById("user-input").value = ""; // Clear input
-    chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll
-  }
-</script>
-
-
+            // Simple responses
+            if (input.includes("hello") || input.includes("hi") || input.includes("hey") || input.includes("sup") || input.includes("dude") || input.includes("man")) {
+                return "Hello! I am Dev's Chat Bot! What do you want to know about Dev today? Skills, projects, experience, contact, or maybe a joke?";
+            } else if (input.includes("name")) {
+                return "I'm Dev Bhatt's Chatbot!";
+            } else if (input.includes("skills")) {
+                return "Dev is experienced in Frontend Development, including HTML, CSS, JavaScript, SQL, Java, C, C++, Python, and more. If you want to know about Dev's soft skills, type 'soft skills'.";
+            } else if (input.includes("experience")) {
+                return "Dev has completed a 2-year course in Java, has 6 months of experience in Python, 1 year in HTML/CSS/JavaScript, 6 months in SQL, and 3 months in C++ and C.";    
+            } else if (input.includes("projects")) {
+                return "Dev has done many projects in multiple languages. Which one do you want to know about?\n1. Angry Birds Project\n2. Webpage for a client\n3. Election Analysis App\n4. Birthday Website\n5. Library Management System\nType the name of the project!";
+            } else if (input.includes("angry")) {
+                return "I developed an Angry Birds-inspired game in Java featuring physics-based projectile motion, collision detection, and interactive gameplay. The game includes a slingshot mechanism, destructible structures, a scoring system, and immersive sound effects. Technologies used: Java Swing/JavaFX, a custom physics engine, event handling, and animation. Future improvements: level progression, enhanced graphics, and more interactive elements. Contact Dev for more details via email at Devbhatt2111@gmail.com or LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
+            } else if (input.includes("webpage for the client-1")) {
+                return "I designed and developed a custom business webpage using HTML, CSS, and JavaScript, tailored to client requirements. Features: responsive layout, smooth navigation, and dynamic content updates.\nLink: https://dev21072107.github.io/wepage/";
+            } else if (input.includes("election")) {
+                return "I developed a Python-based election analysis tool for UK elections, providing 13 user-selectable options for data exploration, visualization, and statistics.\nLink to code: https://github.com/dev21072107/Election-mc";
+            } else if (input.includes("birthday website")) {
+                return "Please contact Dev for details via email at Devbhatt2111@gmail.com or on LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
+            } else if (input.includes("library")) {
+                return "Please contact Dev for details via email at Devbhatt2111@gmail.com or on LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
+            } else if (input.includes("contact")) {
+                return "You can contact Dev via email at Devbhatt2111@gmail.com or on LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
+            } else if (input.includes("joke") || input.includes("funny") || input.includes("make me laugh")) {
+                return jokes[Math.floor(Math.random() * jokes.length)];
+            } else {
+                return "I'm not sure about that. Ask me about Dev's skills, experience, projects, or contact!";
+            }
+        }
+    </script>
+</body>
+</html>
