@@ -20,40 +20,53 @@
     </section>
     
     <script>
-        async function getBotResponse(input) {
+        function getBotResponse(input) {
             input = input.toLowerCase();
 
-            // Simple responses
-            const simpleResponses = {
-                "hello": "Hello! I am Dev's Chat Bot! What do you want to know about Dev today? Skills, projects, experience, contact, or maybe a joke?",
-                "hi": "Hello! I am Dev's Chat Bot! What do you want to know about Dev today? Skills, projects, experience, contact, or maybe a joke?",
-                "hey": "Hello! I am Dev's Chat Bot! What do you want to know about Dev today? Skills, projects, experience, contact, or maybe a joke?",
-                "sup": "Hello! I am Dev's Chat Bot! What do you want to know about Dev today? Skills, projects, experience, contact, or maybe a joke?",
-                "joke": "Why don’t skeletons fight each other? Because they don’t have the guts! 😆",
-                "name": "I'm Dev Bhatt's Chatbot!",
-                "skills": "Dev is experienced in Frontend Development, including HTML, CSS, JavaScript, SQL, Java, C, C++, Python, and more. If you want to know about Dev's soft skills, type 'soft skills'.",
-                "experience": "Dev has completed a 2-year course in Java, has 6 months of experience in Python, 1 year in HTML/CSS/JavaScript, 6 months in SQL, and 3 months in C++ and C.",
-                "projects": "Dev has done many projects in multiple languages. Which one do you want to know about? Angry Birds Project, Webpage for a client, Election Analysis App, Birthday Website, or Library Management System.",
-                "contact": "You can contact Dev via email at Devbhatt2111@gmail.com or on LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/"
-            };
+            const jokes = [
+                "Why don’t skeletons fight each other? Because they don’t have the guts! 😆",
+                "I told my wife she was drawing her eyebrows too high. She looked surprised! 🤨",
+                "Why did the scarecrow win an award? Because he was outstanding in his field! 😂",
+                "Parallel lines have so much in common. It’s a shame they’ll never meet. 📏",
+                "Why do cows have hooves instead of feet? Because they lactose! 🐄🤣"
+            ];
 
-            // Check for simple responses
-            if (simpleResponses[input]) {
-                return simpleResponses[input];
+            // Emotion-based responses
+            if (input.includes("sad") || input.includes("depressed")) {
+                return "I'm here for you! 😊 Remember, every day is a fresh start! 💖";
+            } else if (input.includes("happy")) {
+                return "That's awesome! Keep smiling! 😃";
             }
 
-            // If no simple response, send input to backend (Node.js) for OpenAI response
-            const response = await fetch('http://localhost:5000/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message: input })
-            });
-            
-            const data = await response.json();
-            return data.reply; // Return the bot's reply from OpenAI
-        }
+            // Simple responses
+    if (input.includes("hello") || input.includes("hi") || input.includes("hey") || input.includes("sup") || input.includes("dude") || input.includes("man")) {
+      return "Hello! I am Dev's Chat Bot! What do you want to know about Dev today? Skills, projects, experience, contact, or maybe a joke?";
+    } else if (input.includes("name")) {
+      return "I'm Dev Bhatt's Chatbot!";
+    } else if (input.includes("skills")) {
+      return "Dev is experienced in Frontend Development, including HTML, CSS, JavaScript, SQL, Java, C, C++, Python, and more. If you want to know about Dev's soft skills, type 'soft skills'.";
+    } else if (input.includes("experience")) {
+      return "Dev has completed a 2-year course in Java, has 6 months of experience in Python, 1 year in HTML/CSS/JavaScript, 6 months in SQL, and 3 months in C++ and C.";    
+    } else if (input.includes("projects")) {
+      return "Dev has done many projects in multiple languages. Which one do you want to know about?\n1. Angry Birds Project\n2. Webpage for a client\n3. Election Analysis App\n4. Birthday Website\n5. Library Management System\nType the name of the project!";
+    } else if (input.includes("angry")) {
+      return "I developed an Angry Birds-inspired game in Java featuring physics-based projectile motion, collision detection, and interactive gameplay. The game includes a slingshot mechanism, destructible structures, a scoring system, and immersive sound effects. Technologies used: Java Swing/JavaFX, a custom physics engine, event handling, and animation. Future improvements: level progression, enhanced graphics, and more interactive elements. Contact Dev for more details via email at Devbhatt2111@gmail.com or LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
+    } else if (input.includes("webpage for the client-1")) {
+      return "I designed and developed a custom business webpage using HTML, CSS, and JavaScript, tailored to client requirements. Features: responsive layout, smooth navigation, and dynamic content updates.\nLink: https://dev21072107.github.io/wepage/";
+    } else if (input.includes("election")) {
+      return "I developed a Python-based election analysis tool for UK elections, providing 13 user-selectable options for data exploration, visualization, and statistics.\nLink to code: https://github.com/dev21072107/Election-mc";
+    } else if (input.includes("birthday website")) {
+      return "Please contact Dev for details via email at Devbhatt2111@gmail.com or on LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
+    } else if (input.includes("library")) {
+      return "Please contact Dev for details via email at Devbhatt2111@gmail.com or on LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
+    } else if (input.includes("contact")) {
+      return "You can contact Dev via email at Devbhatt2111@gmail.com or on LinkedIn: https://www.linkedin.com/in/dev-bhatt-a356a430b/";
+    } else if (input.includes("joke") || input.includes("funny") || input.includes("make me laugh")) {
+      return jokes[Math.floor(Math.random() * jokes.length)];
+    } else {
+      return "I'm not sure about that. Ask me about Dev's skills, experience, projects, or contact!";
+    }
+  }
 
         function sendMessage() {
             let userInput = document.getElementById("user-input").value;
@@ -66,8 +79,8 @@
             document.getElementById("user-input").value = "";
             chatbox.scrollTop = chatbox.scrollHeight;
 
-            showTypingEffect(async () => {
-                let botResponse = await getBotResponse(userInput);
+            showTypingEffect(() => {
+                let botResponse = getBotResponse(userInput);
                 let botMessage = `<p class='bot-message'>Dev's AI Bot: ${botResponse}</p>`;
                 chatbox.innerHTML += botMessage;
                 speakResponse(botResponse);
