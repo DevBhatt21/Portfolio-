@@ -1,0 +1,3 @@
+# Ignore .env file to prevent uploading sensitive data
+.env
+node_modules/
