@@ -325,6 +325,16 @@ section {
   margin: auto 0;
 }
 
+/* Increase font size and styling for About Me description */
+#about .text-container p {
+  font-size: 1.3em; /* Increase font size for better readability */
+  line-height: 1.6; /* Improve line spacing */
+  font-weight: 400; /* Optional: makes the text normal weight */
+  color: #333; /* Optional: improves text contrast */
+  margin-top: 1rem; /* Optional: adds spacing above the text */
+}
+
+
 /* EXPERIENCE SECTION */
 
 #experience {
