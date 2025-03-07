@@ -33,7 +33,7 @@ app.post("/chat", async (req, res) => {
 
     // Call OpenAI API with the user message
     const response = await openai.chat.completions.create({
-      model: "gpt-4",  // Specify the OpenAI model you want to use
+      model: "gpt-3.5-turbo",  // Specify the OpenAI model you want to use
       messages: [{ role: "user", content: userMessage }],
       max_tokens: 150,
     });
