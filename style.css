@@ -533,7 +533,23 @@ footer p {
         text-align: center;
         padding: 10px;
     }
+  .menu-links {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.menu-links.active {
+    display: block;
+}
+
+}
+
+
 
 
 
